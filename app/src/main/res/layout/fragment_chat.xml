@@ -8,7 +8,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="622dp">
+        android:layout_height="589dp"
+        android:layout_marginTop="50dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -16,6 +17,6 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
-            android:text="@string/large_text" />
+            android:text="@string/chat_history" />
     </ScrollView>
 </RelativeLayout>
