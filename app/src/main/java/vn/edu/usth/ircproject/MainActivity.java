@@ -12,8 +12,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Create a new Fragment to be placed in the activity layout
-        ChatFragment firstFragment = new ChatFragment();
+        ChatInputFragment firstFragment = new ChatInputFragment();
+        ChatFragment secondFragment = new ChatFragment();
+
         // Add the fragment to the 'container' FrameLayout
         getSupportFragmentManager().beginTransaction().add(R.id.container, firstFragment).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.container, secondFragment).commit();
     }
 }
