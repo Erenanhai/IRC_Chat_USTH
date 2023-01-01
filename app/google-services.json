@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "365818897645",
+    "project_id": "irc-project-b3e13",
+    "storage_bucket": "irc-project-b3e13.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365818897645:android:0e29929f61e9df05cb98e4",
+        "android_client_info": {
+          "package_name": "vn.edu.usth.ircproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "365818897645-g35pbnv1hoadfcg1gpkh2ppmj3onrspj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChL4aCQt8cU-w_C5J5hzNCg3zpRndF4JM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "365818897645-g35pbnv1hoadfcg1gpkh2ppmj3onrspj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
