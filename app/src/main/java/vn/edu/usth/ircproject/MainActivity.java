@@ -6,8 +6,11 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,11 +21,28 @@ public class MainActivity extends AppCompatActivity {
     private TabsAccessorAdapter myTabsAccessorAdapter;
 
     private FirebaseUser currentUser;
+    private FirebaseAuth mAuth;
+    private Button Button2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        Button2 = (Button) findViewById(R.id.button2);
+
+        Button2.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View button) {
+                 SendUserToLoginActivity();
+            }
+        });
+
+//        get current user
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
+
 
         mToolbar = (Toolbar) findViewById(R.id.main_page_toolbar);
         setSupportActionBar(mToolbar);
@@ -38,19 +58,21 @@ public class MainActivity extends AppCompatActivity {
         myTabLayout.setupWithViewPager(myViewPager);
     }
 
+
+
     @Override
-    protected void onStart() {
+    public void onStart() {
 
         super.onStart();
 //   Check and verify user
         if (currentUser == null){
-
-            SendUsertoLoginActivity();
+            SendUserToLoginActivity();
         }
     }
 
-//   ask user to log in
-    private void SendUsertoLoginActivity() {
+
+    //   ask user to log in
+    private void SendUserToLoginActivity() {
         Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(loginIntent);
     }

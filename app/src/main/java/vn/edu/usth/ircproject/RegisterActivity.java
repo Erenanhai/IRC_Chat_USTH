@@ -39,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
         AlreadyHaveAccountLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SendUsertoLoginActivity();
+                SendUserToLoginActivity();
             }
         });
 
@@ -104,7 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
         loadingBar = new ProgressDialog(this);
     }
 //    Send User to Log in when he click this
-    private void SendUsertoLoginActivity() {
+    private void SendUserToLoginActivity() {
         Intent loginIntent = new Intent(RegisterActivity.this, LoginActivity.class);
         startActivity(loginIntent);
     }
