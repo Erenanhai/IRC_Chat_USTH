@@ -1,11 +1,14 @@
 package vn.edu.usth.ircproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -22,22 +25,13 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseUser currentUser;
     private FirebaseAuth mAuth;
-    private Button Button2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        Button2 = (Button) findViewById(R.id.button2);
-
-        Button2.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View button) {
-                 SendUserToLoginActivity();
-            }
-        });
 
 //        get current user
         mAuth = FirebaseAuth.getInstance();
@@ -76,4 +70,32 @@ public class MainActivity extends AppCompatActivity {
         Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(loginIntent);
     }
+
+
+    @Override
+//    Create menu
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater() .inflate(R.menu.option_menu, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        super.onOptionsItemSelected(item);
+
+        if (item.getItemId() == R.id.main_logout_option){
+             mAuth.signOut();
+             SendUserToLoginActivity();
+        }
+        if (item.getItemId() == R.id.main_setting_option){
+
+        }
+        if (item.getItemId() == R.id.main_find_friends_option){
+
+        }
+        return true;
+    }
 }
+

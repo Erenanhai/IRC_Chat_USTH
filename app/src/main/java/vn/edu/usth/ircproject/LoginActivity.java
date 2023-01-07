@@ -92,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                               }
                               else{
                                   String message = task.getException().toString();
-                                  Toast.makeText(LoginActivity.this, "Error: "+ message, Toast.LENGTH_SHORT).show();
+                                  Toast.makeText(LoginActivity.this, "Error: "+message, Toast.LENGTH_SHORT).show();
                                   loadingBar.dismiss();
                               }
 
@@ -111,6 +111,17 @@ public class LoginActivity extends AppCompatActivity {
         loadingBar = new ProgressDialog(this);
     }
 
+    @Override
+    protected void onStart() {
+
+        super.onStart();
+//   Check and verify user
+//   If the user already logged in, then send he/she to app directly
+        if (currentUser != null){
+
+            SendUserToMainActivity();
+        }
+    }
 
     private void SendUserToMainActivity() {
         Intent loginIntent = new Intent(LoginActivity.this, MainActivity.class);
