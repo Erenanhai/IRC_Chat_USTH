@@ -90,12 +90,20 @@ public class MainActivity extends AppCompatActivity {
              SendUserToLoginActivity();
         }
         if (item.getItemId() == R.id.main_setting_option){
+            SendUserToSettingsActivity();
 
         }
         if (item.getItemId() == R.id.main_find_friends_option){
 
         }
         return true;
+    }
+
+
+
+    private void SendUserToSettingsActivity() {
+        Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
+        startActivity(settingsIntent);
     }
 }
 
