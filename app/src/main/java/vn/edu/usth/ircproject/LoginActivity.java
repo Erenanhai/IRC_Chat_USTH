@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private FirebaseUser currentUser;
+
     private FirebaseAuth mAuth;
     private ProgressDialog loadingBar;
 
@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
 
 //user authentication
         mAuth = FirebaseAuth.getInstance();
-        currentUser = mAuth.getCurrentUser();
+
 
 
 
@@ -111,21 +111,12 @@ public class LoginActivity extends AppCompatActivity {
         loadingBar = new ProgressDialog(this);
     }
 
-    @Override
-    protected void onStart() {
-
-        super.onStart();
-//   Check and verify user
-//   If the user already logged in, then send he/she to app directly
-        if (currentUser != null){
-
-            SendUserToMainActivity();
-        }
-    }
 
     private void SendUserToMainActivity() {
-        Intent loginIntent = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(loginIntent);
+        Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
+        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(mainIntent);
+        finish();
     }
 
     //    Send User to Register when he click this
