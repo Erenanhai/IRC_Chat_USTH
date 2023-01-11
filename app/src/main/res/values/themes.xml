@@ -8,4 +8,6 @@
 
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="AlertDialog" parent="Theme.AppCompat.Light.Dialog"></style>
 </resources>
