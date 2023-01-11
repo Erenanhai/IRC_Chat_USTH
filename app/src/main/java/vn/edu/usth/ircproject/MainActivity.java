@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseUser currentUser;
     private FirebaseAuth mAuth;
     private DatabaseReference RootRef;
+
+
 
 
     @Override
@@ -196,6 +199,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
+
+    }
+
+    public void SendMessage(View view) {
+        String chat = ((EditText)findViewById(R.id.message)).getText().toString();
 
     }
     }
