@@ -202,10 +202,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void SendMessage(View view) {
-        String chat = ((EditText)findViewById(R.id.message)).getText().toString();
-
-    }
     }
 
 

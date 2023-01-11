@@ -54,7 +54,7 @@ public class GroupChatActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         currentUserId = mAuth.getCurrentUser().getUid();
         UsersRef = FirebaseDatabase.getInstance().getReference().child("Users");
-        GroupNameRef = FirebaseDatabase.getInstance().getReference().child("Groups").child(currentGroupName );
+        GroupNameRef = FirebaseDatabase.getInstance().getReference().child("Groups").child(currentGroupName);
 
 
 
@@ -80,9 +80,7 @@ public class GroupChatActivity extends AppCompatActivity {
         GroupNameRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String s) {
-                if (snapshot.exists()){
-                    DisplayMessages(snapshot);
-                }
+
 
 
 
